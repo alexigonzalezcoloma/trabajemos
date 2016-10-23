@@ -1,0 +1,92 @@
+/************************/
+/*    Estructura HTML	*/
+/************************/
+body{font-family: "Futura";background:#dedede;z-index:-1000;width:100%;height:100%;padding:0;margin:0;} /* color:#1e1e1e;*/
+
+/*************************/
+/*  Estructura de la web */
+/*************************/
+#webpage{z-index:1;width:80%;border-radius:15px;overflow:hidden;margin:0 auto;box-shadow:1px 1px 22px 0px #6d6b6b;background:white;margin-top:10px;}
+#webpage-header{width:100%;background:#26A69A;height:143px;margin:0 auto;box-shadow: 0px -2px 2px rgba(34,34,34,0.6);}
+#webpage-header-subheader{width:100%;height:100px;background:#80CBC4;padding-top:10px;}
+#subheader-content{width:98%;height:90px;margin:0 auto;border:1px solid #009688;border-radius:25px;
+background: rgba(128,203,196,1);
+background: -moz-linear-gradient(top, rgba(128,203,196,1) 0%, rgba(77,182,172,1) 50%, rgba(77,182,172,1) 51%, rgba(38,166,154,1) 71%, rgba(0,150,136,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(128,203,196,1)), color-stop(50%, rgba(77,182,172,1)), color-stop(51%, rgba(77,182,172,1)), color-stop(71%, rgba(38,166,154,1)), color-stop(100%, rgba(0,150,136,1)));
+background: -webkit-linear-gradient(top, rgba(128,203,196,1) 0%, rgba(77,182,172,1) 50%, rgba(77,182,172,1) 51%, rgba(38,166,154,1) 71%, rgba(0,150,136,1) 100%);
+background: -o-linear-gradient(top, rgba(128,203,196,1) 0%, rgba(77,182,172,1) 50%, rgba(77,182,172,1) 51%, rgba(38,166,154,1) 71%, rgba(0,150,136,1) 100%);
+background: -ms-linear-gradient(top, rgba(128,203,196,1) 0%, rgba(77,182,172,1) 50%, rgba(77,182,172,1) 51%, rgba(38,166,154,1) 71%, rgba(0,150,136,1) 100%);
+background: linear-gradient(to bottom, rgba(128,203,196,1) 0%, rgba(77,182,172,1) 50%, rgba(77,182,172,1) 51%, rgba(38,166,154,1) 71%, rgba(0,150,136,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80cbc4', endColorstr='#009688', GradientType=0 );
+box-shadow:1px 1px 22px 0px #909090;}
+#webpage-container{width:100%;height:500px;margin:0;padding:0;}
+#webpage-container-content {margin-top:-33px;width: 100%;height:520px;}
+#webpage-container-content input {height: 33px;visibility: hidden;}
+#webpage-container-content label {background: #f9f9f9;border-radius: .25em .25em 0 0;color: #888;cursor: pointer;display: block;float: left;font-size: 10pt;height:33px;line-height: 2.5em;margin-right: .25em;padding: 0 1.5em;text-align: center;}
+
+
+.separator-title {border: 0;height: 1px;background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));margin:0;padding:0;}
+
+
+/**************************************/
+/* Ajuste de pestañas y del contenido */
+/**************************************/
+#webpage-container-content input:hover + label {background: #ddd;color: #666;}
+#webpage-container-content input:checked + label {background: #f1f1f1;color: #444;position: relative;z-index: 6;}
+#webpage-container-content input#tab-1:checked ~ #content #content-1,
+#webpage-container-content input#tab-2:checked ~ #content #content-2,
+#webpage-container-content input#tab-3:checked ~ #content #content-3 {opacity: 1;z-index: 100;}
+.title-tab{margin-left:10px;font-size:16pt;} /* Título bajo pestaña */
+.img-title-tab{margin-left:10px;} /* Imagen bajo pestaña */
+.content-info{height:370px;margin-left:10px;width:98%;overflow-wrap: break-word;overflow:auto;overflow-x:hidden;} /* Contenido pestaña  y scrolling automatico*/
+/*************************/
+/*	Contenido pestañas   */
+/*************************/
+#content {background: #ffffff;border-radius: 0 .25em .25em .25em;min-height: 20em;position: relative;width: 100%;z-index: 5;height:460px;}
+#content div {opacity: 0;position: absolute;z-index: -100;}
+#content-1{width:100%;}	
+#content-2{width:100%;}
+#content-3{width:100%;}
+#content-1 p {clear: both;margin-bottom: 1em;}
+#content-1 p.left img {float: left;margin-right: 1em;}
+#content-1 p.last {margin-bottom: 0;}
+#content-2 p {clear: both;margin-bottom: 1em;}
+#content-2 p.left img {float: left;margin-right: 1em;}
+#content-2 p.last {margin-bottom: 0;}
+#content-3 p {clear: both;margin-bottom: 1em;}
+#content-3 p.left img {float: left;margin-right: 1em;}
+#content-3 p.last {margin-bottom: 0;}
+
+/* #content-2 p {float: left;width: 48.5%;}
+#content-2 p.column-right {margin-left: 3%;}
+#content-2 p img {display: block;margin: 0 auto 1em auto;}
+#content-3 p,
+#content-3 ul {margin-bottom: 1em;}
+#content-3 ul {margin-left: 2em;} */
+
+
+
+
+
+/************************/
+/*    Maqueta del menú	*/
+/************************/
+.subheader-content-divTable{display: table;width: 100%;margin-top:10px;}
+.divTableBody {display: table-row-group;}
+.divTableBody-divTableRow {display: table-row;}
+.divTableBody-divTableRow-divTableCell {display: table-cell;padding: 15px 20px;border-right:1px solid #f0f0f0;text-align:center;margin: 0;padding: 0;}
+.divTableBody-divTableRow-divTableCell2 {display: table-cell;padding: 15px 20px;text-align:center;margin: 0;padding: 0;}
+.menu-img:hover{opacity: 0.7;cursor:pointer;}
+.menu-img-last:hover{opacity: 0.7;cursor:pointer;}
+.menu-text{color:#ffffff;display:block;}
+
+
+/********************/
+/*    Fuentes ERP	*/
+/********************/
+@font-face {
+    font-family: "Futura";
+    src: url("../php/fonts/Roboto-Regular.ttf");
+}
+
+
