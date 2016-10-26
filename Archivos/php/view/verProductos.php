@@ -4,8 +4,8 @@
 	<div id="content-1">													<!--Contenido de la Pestaña 1-->
 		<table>
 			<tr>
-				<td><img class="img-title-tab" src="img/menu/vender.png" width="40px" height="40px" /></td>
-				<td><p class="title-tab">Vender</p></td>
+				<td><img class="img-title-tab" src="img/menu/verProductos.png" width="40px" height="40px" /></td>
+				<td><p class="title-tab">Ver Productos</p></td>
 			</tr>
 		</table>
 		<hr class="separator-title">
