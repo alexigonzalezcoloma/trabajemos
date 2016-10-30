@@ -3,7 +3,7 @@
 $server = "localhost";
 $user = "root";
 $pass = "";
-$baseDatos = "nsandoval";
+$baseDatos = "valeria";
 
 $db = mysql_connect($server, $user, $pass);
 mysql_select_db($baseDatos, $db);
