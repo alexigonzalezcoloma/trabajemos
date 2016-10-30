@@ -32,7 +32,7 @@ if ($count == 1) {
         $_SESSION['estado'] = "logueadoinv";
         $_SESSION['rut'] = "$row1[2]";
         $_SESSION['nombrecompleto'] = "$row1[0] $row1[1]";
-        header("Location: ../php/Inventario.php");					#es inventario
+        header("Location: ../boceto1.php");					#es inventario
     }
     if ($row[0] == "3") {
 
