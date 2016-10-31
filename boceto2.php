@@ -46,7 +46,7 @@
 			</div>
 		</div>
 		<div id="webpage-body">			
-			<?php include("php/view/inicio.php");?>
+			<?php include("php/view/verProductos.php");?>
 		</div>
 	</div>
     </body>

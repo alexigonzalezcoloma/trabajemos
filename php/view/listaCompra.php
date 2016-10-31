@@ -10,26 +10,42 @@
 		</table>
 		<hr class="separator-title">
 		<p class="content-info">
-		<?php
-			$conectar=mysqli_connect("localhost","root","","erp");
-			$consulta=mysqli_query($conectar,"SELECT* from productos");
-			
-			echo "<center>";
-			echo "<table border='2px'>";
-			echo "<tr>";
-			echo "<td>ID</td>";
-			echo "<td>Producto</td>";
-			echo "<td>Lista de Compra</td>";
-			echo "</tr>";
-			while ($filas = mysqli_fetch_row($consulta)){
-				echo "<tr>";
-				echo "<td>$filas[0]</td>";
-				echo "<td>$filas[1]</td>";
-				echo "<td>$filas[5]</td>";
-				echo "</tr>";
-			}
-		?>
-			
+			<?php		
+				include("../conex.inc");
+
+				$sql = "SELECT nom_producto, stock, precio, precio_neto, lista_compra FROM productos";
+				$resultado = mysql_query($sql,$db);
+				$fila = mysql_fetch_array($resultado);
+				echo"	<table id='table-div' cellspacing='0' cellpadding='0' border='0' width='325'>
+							<tr>
+								<th>Nombre Producto</th>
+								<th>Stock</th>
+								<th>Precio</th>
+								<th>Precio Neto</th>
+								<th>Cantidad</th>
+								<th>Acción</th>
+							</tr>";
+					if (mysql_num_rows($resultado)>0){
+						while($fila = mysql_fetch_array($resultado)){
+							echo"<tr>
+									<td>$fila[0]</td>				
+									<td>$fila[1]</td>
+									<td>$fila[2]</td>				
+									<td>$fila[3]</td>
+									<td>$fila[4]</td>	
+									<td>
+										<img class='action-icon-table edit-user' id='$fila[0]' src='img/icons/edit.png' title='Editar' width='20px' height='20px'/>
+										<img class='action-icon-table delete-user' id='$fila[0]' src='img/icons/delete.png' title='Eliminar' width='20px' height='20px'/>
+									</td>
+								</tr>";
+						}
+					}
+					else{
+						echo"<td colspan='8'>Sin resultados</td>";
+					}
+				echo"</table>
+						<button id='addproducto' class='button-action'>Nuevo Producto</button>";
+				?>
 		</p>
 	</div>
 </div>

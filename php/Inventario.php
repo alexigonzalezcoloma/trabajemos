@@ -1,3 +1,3 @@
 ﻿<?php
-echo "Bienvenido a inventario";
+echo "Usted es inventario";
 ?>
