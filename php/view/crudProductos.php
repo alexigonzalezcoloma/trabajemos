@@ -12,5 +12,8 @@
 		<p class="content-info">
 			
 		</p>
+		<style>a{color:#00000; background:#0277BD; border-radius:2px; width:16px; height:10px;} a:hover{background:#00000; color:#fffff}</style>
+		<a>Eliminar producto</a>
+		<a>Agregar Producto</a>
 	</div>
 </div>

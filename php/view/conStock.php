@@ -10,6 +10,27 @@
 		</table>
 		<hr class="separator-title">
 		<p class="content-info">
+		<?php
+			$conectar=mysqli_connect("localhost","root","","erp");
+			$consulta=mysqli_query($conectar,"SELECT* from productos where stock!='0'");
+
+			echo "<center>";
+			echo "<table border='2px'>";
+			echo "<tr>";
+			echo "<td>ID</td>";
+			echo "<td>Producto</td>";
+			echo "<td>Stock</td>";
+			echo "</tr>";
+			while ($filas = mysqli_fetch_row($consulta)){
+				echo "<tr>";
+				echo "<td>$filas[0]</td>";
+				echo "<td>$filas[1]</td>";
+				echo "<td>$filas[2]</td>";
+				echo "</tr>";
+			}
+			echo "</table>";
+			echo "</center>";
+		?>
 			
 		</p>
 	</div>
