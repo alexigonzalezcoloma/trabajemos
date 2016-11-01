@@ -13,15 +13,16 @@
 			<?php		
 				include("../conex.inc");
 
-				$sql = "SELECT nom_producto, stock, precio, precio_neto FROM productos";
+				$sql = "SELECT id_producto, nom_producto, precio, precio_neto, descripcion FROM productos";
 				$resultado = mysql_query($sql,$db);
 				$fila = mysql_fetch_array($resultado);
 				echo"	<table id='table-div' cellspacing='0' cellpadding='0' border='0' width='325'>
 							<tr>
+								<th>ID</th>
 								<th>Nombre Producto</th>
-								<th>Stock</th>
 								<th>Precio</th>
 								<th>Precio Neto</th>
+								<th>Descripción</th>
 							</tr>";
 					if (mysql_num_rows($resultado)>0){
 						while($fila = mysql_fetch_array($resultado)){
@@ -29,7 +30,8 @@
 								<td>$fila[0]</td>				
 								<td>$fila[1]</td>
 								<td>$fila[2]</td>				
-								<td>$fila[3]</td>	
+								<td>$fila[3]</td>
+								<td>$fila[4]</td>	
 							</tr>";
 							
 						}

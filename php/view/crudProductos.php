@@ -12,14 +12,7 @@
 		<p class="content-info">
 			<?php		
 				include("../conex.inc");
-				/*	
-				echo "	<script>
-							<form action='buscar'>
-								<input type='text' name='searchproducto' value='Buscar'>
-								<input type='submit' value='Buscar'>
-							</form>
-						</script>";
-				*/
+	
 				$sql = "SELECT * FROM productos";
 				$resultado = mysql_query($sql,$db);
 				
@@ -56,7 +49,7 @@
 					}
 				echo "	</table>
 						<button id='addproducto' class='button-action'>Agregar Producto</button>";
-				?>
+			?>
 		</p>
 	</div>
 </div>

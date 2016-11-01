@@ -13,15 +13,15 @@
 			<?php		
 				include("../conex.inc");
 
-				$sql = "SELECT nom_producto, stock, precio, precio_neto FROM productos WHERE stock > 0 ORDER BY stock asc ";
+				$sql = "SELECT id_producto, nom_producto, precio, stock FROM productos WHERE stock > 0 ORDER BY stock asc ";
 				$resultado = mysql_query($sql,$db);
 				$fila = mysql_fetch_array($resultado);
 				echo"	<table id='table-div' cellspacing='0' cellpadding='0' border='0' width='325'>
 							<tr>
+								<th>ID</th>
 								<th>Nombre Producto</th>
-								<th>Cantidad</th>
 								<th>Precio</th>
-								<th>Precio Neto</th>
+								<th>Stock</th>
 							</tr>";
 					if (mysql_num_rows($resultado)>0){
 						while($fila = mysql_fetch_array($resultado)){
