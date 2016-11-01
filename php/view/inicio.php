@@ -13,13 +13,13 @@
 						<?php
 							echo "	<table id='table-div' cellspacing='0' cellpadding='0' border='0' width='325'>
 										<tr>
-											<th><img src='img/menu2/busqueda.png' width='30' height='30'>Buscar Productos</th>
+											<th>Buscar Productos</th>
 										</tr>
 									</table><br/>";
 						?>
 
 						<center><form action="boceto1.php">
-							INGRESAR 'ID' DEL PRODUCTO: 
+							Busqueda de Producto por ID: 
 				            <input type="text" name="busca" va>
 				            <input type="submit" name="buscar" value="Buscar">
 				        </form></center>
