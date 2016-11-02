@@ -29,7 +29,7 @@
 	<input type="submit" value="Confirmar" name="boton" class="button-action">
 </form>
 
-<form action="/trabajemos-master/boceto.php">
+<form action="../../boceto1.php">
 	<input type="submit" value="Regresar a Inicio" name="regreso" class="button-action">
 </form>
 

@@ -55,7 +55,7 @@
 					}
 
 				echo "	</table>
-						<form action='/trabajemos-master/php/view/agregarProducto.php'>
+						<form action='/ERP/trabajemos/php/view/agregarProducto.php'>
 						<br><input type='submit' name='agregar' class='button-action' value='Agregar Producto'>
 						</form>";
 		?>
