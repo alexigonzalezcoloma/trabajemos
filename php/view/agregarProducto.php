@@ -44,7 +44,7 @@
 		$ListaCompra=$_GET["ListadeCompra"];
 		$Descripcion=$_GET["Descripcion"];
 
-		$db="INSERT INTO productos (id_producto,nom_producto,stock,precio_neto,precio,lista_compra,descripcion) VALUES (NULL,".$Nombre.",".$Stock.",".$PrecioNeto.",".$Precio.",".$ListaCompra.", ".$Descripcion.")"; 
+		$db="INSERT INTO productos (id_producto,nom_producto,stock,precio_neto,precio,lista_compra,descripcion) VALUES (NULL,'$Nombre','$Stock','$PrecioNeto','$Precio','$ListaCompra', '$Descripcion')"; 
 		$agregar=mysqli_query($conectar,$db); 
 	}
 ?>

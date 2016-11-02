@@ -13,7 +13,7 @@
 						<?php
 							echo "	<table id='table-div' cellspacing='0' cellpadding='0' border='0' width='325'>
 										<tr>
-											<th><img src='img/menu2/busqueda.png' width='30' height='30'>Buscar Productos</th>
+											<th>Buscar Productos</th>
 										</tr>
 									</table><br/>";
 						?>
