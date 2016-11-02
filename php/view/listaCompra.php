@@ -1,5 +1,5 @@
 <input id="tab-1" type="radio" name="tab-group" checked="checked" />		<!--Pestaña 1 activa por defecto-->
-<label for="tab-1">Lista Compra</label>						
+<label id="text-tab-1" for="tab-1">Lista Compra</label>				
 <div id="content">															<!--Contenido a mostrar/ocultar-->							
 	<div id="content-1">													<!--Contenido de la Pestaña 1-->
 		<table>
@@ -14,8 +14,8 @@
 				include("../conex.inc");
 
 				$sql = "SELECT id_producto,nom_producto,precio, lista_compra FROM productos";
-				$resultado = mysqli_query($db,$sql);
-				$fila = mysqli_fetch_array($resultado);
+				$resultado = mysql_query($sql,$db);
+				
 				echo"	<table id='table-div' cellspacing='0' cellpadding='0' border='0' width='325'>
 							<tr>
 								<th>ID</th>
@@ -23,8 +23,8 @@
 								<th>Precio</th>
 								<th>Cantidad</th>
 							</tr>";
-					if (mysqli_num_rows($resultado)>0){
-						while($fila = mysqli_fetch_array($resultado)){
+					if (mysql_num_rows($resultado)>0){
+						while($fila = mysql_fetch_array($resultado)){
 							echo"<tr>
 									<td>$fila[0]</td>				
 									<td>$fila[1]</td>
