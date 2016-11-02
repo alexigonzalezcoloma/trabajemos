@@ -1,9 +1,9 @@
 <input id="tab-1" type="radio" name="tab-group" checked="checked" />
-<label id="text-tab-1" for="tab-1">Lista Productos</label>
+<!--<label id="text-tab-1" for="tab-1">Lista Productos</label>
 <input id="tab-2" type="radio" name="tab-group" />
 <label id="text-tab-2" for="tab-2">Pestaña 2</label>
 <input id="tab-3" type="radio" name="tab-group" />
-<label id="text-tab-3" for="tab-3">Pestaña 3</label>					
+<label id="text-tab-3" for="tab-3">Pestaña 3</label>-->					
 <div id="content">															<!--Contenido a mostrar/ocultar-->							
 	<div id="content-1">													<!--Contenido de la Pestaña 1-->
 		<table>

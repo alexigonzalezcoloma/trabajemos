@@ -48,7 +48,7 @@
 		</div>
 		<div id="webpage-body">			
 			<input id="tab-1" type="radio" name="tab-group" checked="checked" />		<!--Pestaña 1 activa por defecto-->
-			<label id="text-tab-1" for="tab-1">Inicio</label>									
+			<!--<label id="text-tab-1" for="tab-1">Inicio</label>-->								
 			<div id="content">															<!--Contenido a mostrar/ocultar-->					
 				<div id="content-1">													<!--Contenido de la Pestaña 1-->
 					<table>
