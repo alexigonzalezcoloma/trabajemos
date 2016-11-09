@@ -8,7 +8,6 @@
         <link rel="stylesheet" type="text/css" href="css/responsive.css"/>
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/functions-js.js"></script>
-		<script type="text/javascript" src="js/functions-jquery.js"></script>
 		<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
 		<script type="text/javascript" src="js/funcionesbuscar.js"></script>
 		<script type="text/javascript" src="js/funciones-inventario.js"></script>
