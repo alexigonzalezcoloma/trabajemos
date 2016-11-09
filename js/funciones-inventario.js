@@ -49,6 +49,38 @@ $(document).ready(function(){
 			})
 		}		
 	});
+
+	$('#add-new-producto').click(function(){
+		var $productonombre = $('#producto-nombre').val();
+		var $productostock = $('#producto-stock').val();
+		var $productoprecioneto = $('#producto-precioneto').val();
+		var $productoprecio = $('#producto-precio').val();
+		var $productodescripcion = $('#producto-descripcion').val();
+		
+		if($productonombre!="" && $productostock!="" && $productoprecioneto!="" && $productoprecio!="" && $productodescripcion!=""){
+			$.ajax({ 
+				type: "POST",
+				data:{nom_producto:$productonombre,stock:$productostock,precio_neto:$productoprecioneto,precio:$productoprecio,descripcion:$productodescripcion},
+				url: "php/actions/newProductos.php",             
+				dataType: "html",                 
+				success: function(response){ 
+					$("#content-1-body").html(response);
+				}
+			})
+		}		
+	});
+
+	$('#add-producto').click(function(){
+		
+			$.ajax({ 
+				type: "POST",
+				url: "php/actions/addProductos.php",             
+				dataType: "html",                 
+				success: function(response){ 
+					$("#content-1-body").html(response);
+				}
+			})		
+	});
 });
 
 

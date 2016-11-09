@@ -52,10 +52,8 @@
 						else{
 							echo"<td colspan='8'>Sin resultados</td>";
 						}
-					echo "	</table>
-							<form action='php/view/agregarProducto.php'>
-							<input type='submit' id='addproducto' class='button-action' value='Agregar Producto'>
-							</form>";
+					echo "	</table><br/>
+							<button id='add-producto' class='button-action'>Agregar Producto</button>";
 				?>
 			</div>
 		</div>

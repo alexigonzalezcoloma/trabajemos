@@ -2,21 +2,18 @@
 <script type="text/javascript" src="js/functions-js.js"></script>
 <script type="text/javascript" src="js/funciones-inventario.js"></script>
 <?php
-if(isset($_REQUEST["id_producto"])){
 	$conexion = mysql_connect("w3.inf.uct.cl","valeria","vale4321");
 	mysql_select_db("valeria");
 
-	$id1	 	  = $_POST["id1"];
 	$nom_producto = $_POST["nom_producto"];
 	$stock        = $_POST["stock"];
 	$precio_neto  = $_POST["precio_neto"];
 	$precio 	  = $_POST["precio"];
-	$lista_compra = $_POST["lista_compra"];
 	$descripcion  = $_POST["descripcion"];
-	$eliminado    = $_POST["eliminado"];
 
-	$query = "UPDATE productos SET nom_producto='$nom_producto', stock='$stock', precio_neto='$precio_neto', precio='$precio', lista_compra='$lista_compra', descripcion='$descripcion', eliminado='$eliminado' WHERE id_producto='$id1'";	
-	$resp = mysql_query($query);
+	$query = "INSERT INTO productos (id_producto, nom_producto, stock, precio_neto, precio, lista_compra, descripcion, eliminado) VALUES (NULL, '$nom_producto', $stock, $precio_neto, $precio, 0, '$descripcion', 0)";
+	mysql_query($query);
+
 
 	$sql = "SELECT * FROM productos";
 	$resultado = mysql_query($sql);
@@ -55,6 +52,6 @@ if(isset($_REQUEST["id_producto"])){
 		echo"<td colspan='8'>Sin resultados</td>";
 	}
 	echo"</table>
-			<button id='addproducto' class='button-action'>Agregar Producto</button>";
-}
+			<button id='add-producto' class='button-action'>Agregar Producto</button>";
+
 ?>

@@ -13,7 +13,7 @@
 			<?php		
 				include("../conex.inc");
 
-				$sql = "SELECT id_producto,nom_producto,precio, lista_compra FROM productos";
+				$sql = "SELECT id_producto,nom_producto,precio, lista_compra FROM productos WHERE eliminado=0";
 				$resultado = mysql_query($sql,$db);
 				echo"	<table id='table-div' cellspacing='0' cellpadding='0' border='0' width='325'>
 							<tr>
