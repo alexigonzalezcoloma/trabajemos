@@ -17,6 +17,7 @@
 		else{
 			alert("Falta un dato");
 		}
+<<<<<<< HEAD
 	});
 });
 
@@ -56,6 +57,44 @@ $(document).ready(function(){ //cuando el html fue cargado iniciar
             })  
         }
     }); 
+=======
+	})
+})
+
+$(document).ready(function(){ //cuando el html fue cargado iniciar  
+    //actualiza cada x segundos  
+    var contador = 1;  
+    setInterval(function() {$('#content').load('index.php',{action:"refreshGrid"});  
+                            console.log("ABM load "+contador++ +"");}, 120000 );  
+    //añado la posibilidad de editar al presionar sobre edit  
+    $('.edit').live('click',function(){  
+        //this = es el elemento sobre el que se hizo click en este caso el link  
+        //obtengo el id que guardamos en data-id  
+        var id=$(this).attr('data-id');  
+        //preparo los parametros  
+        params={};  
+        params.id=id;  
+        params.action="editClient";  
+        $('#popupbox').load('index.php', params,function(){  
+            $('#block').show();  
+            $('#popupbox').show();  
+        })  
+  
+    })  
+  
+    $('.delete').live('click',function(){  
+        //obtengo el id que guardamos en data-id  
+        var id=$(this).attr('data-id');  
+        //preparo los parametros  
+        params={};  
+        params.id=id;  
+        params.action="deleteClient";  
+        $('#popupbox').load('index.php', params,function(){  
+            $('#content').load('index.php',{action:"refreshGrid"});  
+        })  
+  
+    })  
+>>>>>>> origin/master
   
     $('#new').live('click',function(){  
         params={};  
