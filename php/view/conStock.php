@@ -15,7 +15,6 @@
 
 				$sql = "SELECT id_producto, nom_producto, precio, stock FROM productos WHERE stock > 0 ORDER BY stock asc ";
 				$resultado = mysql_query($sql,$db);
-				$fila = mysql_fetch_array($resultado);
 				echo"	<table id='table-div' cellspacing='0' cellpadding='0' border='0' width='325'>
 							<tr>
 								<th>ID</th>

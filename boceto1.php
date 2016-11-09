@@ -9,6 +9,9 @@
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/functions-js.js"></script>
 		<script type="text/javascript" src="js/functions-jquery.js"></script>
+		<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+		<script type="text/javascript" src="js/funcionesbuscar.js"></script>
+		<script type="text/javascript" src="js/funciones-inventario.js"></script>
 		
 		<link rel="icon" type="image/png" href="img/icon.png" />
         <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />	
@@ -69,14 +72,14 @@
 
 						<center><form action="boceto1.php">
 							INGRESAR 'ID' DEL PRODUCTO: 
-				            <input type="text" name="busca" va>
+				            <input type="text" name="busca">
 				            <input type="submit" name="buscar" value="Buscar">
 				        </form></center>
 				        <br/>
 
 			        <?php
 						if(isset($_REQUEST["busca"])){
-							$conexion = mysql_connect("localhost","root","");
+							$conexion = mysql_connect("w3.inf.uct.cl","valeria","vale4321");
 							mysql_select_db("valeria");
 							$buscar = $_GET["busca"];
 							$sql = "SELECT * FROM productos WHERE id_producto='$buscar'"; 

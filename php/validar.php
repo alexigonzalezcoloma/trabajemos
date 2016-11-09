@@ -12,7 +12,7 @@ $result = mysql_query($query, $db);
 $count = mysql_numrows($result);
 
 if ($count == 1) {
-    echo $row = mysql_fetch_row($result);
+    $row = mysql_fetch_row($result);
 	
     if ($row[0] == "1") {
 

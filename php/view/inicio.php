@@ -20,14 +20,14 @@
 
 						<center><form action="boceto1.php">
 							INGRESAR 'ID' DEL PRODUCTO: 
-				            <input type="text" name="busca" va>
+				            <input type="text" name="busca">
 				            <input type="submit" name="buscar" value="Buscar">
 				        </form></center>
 				        <br/>
 
 			        <?php
 						if(isset($_REQUEST["busca"])){
-							$conexion = mysql_connect("localhost","root","");
+							$conexion = mysql_connect("w3.inf.uct.cl","valeria","vale4321");
 							mysql_select_db("valeria");
 							$buscar = $_GET["busca"];
 							$sql = "SELECT * FROM productos WHERE id_producto='$buscar'"; 

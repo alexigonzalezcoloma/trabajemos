@@ -15,7 +15,6 @@
 
 				$sql = "SELECT id_producto,nom_producto,precio, lista_compra FROM productos";
 				$resultado = mysql_query($sql,$db);
-				
 				echo"	<table id='table-div' cellspacing='0' cellpadding='0' border='0' width='325'>
 							<tr>
 								<th>ID</th>

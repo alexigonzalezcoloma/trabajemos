@@ -1,8 +1,8 @@
 <?php 
 
-$server = "localhost";
-$user = "root";
-$pass = "";
+$server = "w3.inf.uct.cl";
+$user = "valeria";
+$pass = "vale4321";
 $baseDatos = "valeria";
 
 $db = mysql_connect($server, $user, $pass);

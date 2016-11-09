@@ -36,13 +36,13 @@
 <?php
 	if (isset($_REQUEST["boton"])){
 		
-		$conectar=mysqli_connect("localhost","root","","valeria");
-		$Nombre=$_GET["Producto"];
-		$Stock=$_GET["Stock"];
-		$PrecioNeto=$_GET["PrecioNeto"];
-		$Precio=$_GET["Precio"];
-		$ListaCompra=$_GET["ListadeCompra"];
-		$Descripcion=$_GET["Descripcion"];
+		$conectar = mysqli_connect("w3.inf.uct.cl","valeria","vale4321","valeria");
+		$Nombre = $_GET["Producto"];
+		$Stock = $_GET["Stock"];
+		$PrecioNeto = $_GET["PrecioNeto"];
+		$Precio = $_GET["Precio"];
+		$ListaCompra = $_GET["ListadeCompra"];
+		$Descripcion = $_GET["Descripcion"];
 
 		$db="INSERT INTO productos (id_producto,nom_producto,stock,precio_neto,precio,lista_compra,descripcion) VALUES (NULL,'$Nombre','$Stock','$PrecioNeto','$Precio','$ListaCompra', '$Descripcion')"; 
 		$agregar=mysqli_query($conectar,$db); 
