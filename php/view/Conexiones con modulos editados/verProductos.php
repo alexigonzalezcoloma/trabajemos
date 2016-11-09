@@ -24,7 +24,7 @@
 								<th>Precio Neto</th>
 								<th>Descripcion</th>
 							</tr>";
-					if (mysqli_num_rows($resultado)>0){
+					if (mysqli_num_rows($resultado)>=0){
 						while($fila = mysqli_fetch_array($resultado)){
 							echo"<tr>
 								<td>$fila[0]</td>				
