@@ -1,6 +1,4 @@
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/functions-js.js"></script>
-<script type="text/javascript" src="js/funciones-inventario.js"></script>
+
 <?php
 	include("../conex.inc");
 

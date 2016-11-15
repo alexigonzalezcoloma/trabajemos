@@ -11,6 +11,7 @@
 		<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
 		<script type="text/javascript" src="js/funcionesbuscar.js"></script>
 		<script type="text/javascript" src="js/funciones-inventario.js"></script>
+		<script type="text/javascript" src="js/salir.js"></script>
 		
 		<link rel="icon" type="image/png" href="img/icon.png" />
         <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />	
@@ -45,6 +46,10 @@
 				<div class="menu-item menu-border-bottom" onclick="Ajax('php/view/crudProductos.php', '#webpage-body', '');">
 					<img src="img/menu2/crudProductos.png" class="menu-item-img" />
 					CRUD
+				</div>
+				<div class="menu-item menu-border-bottom" onclick="salir()">
+					<img src="img/menu2/exitt.png" class="menu-item-img" />
+					Salir
 				</div>
 			</div>
 		</div>
