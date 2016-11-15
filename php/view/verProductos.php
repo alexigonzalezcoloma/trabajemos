@@ -17,11 +17,12 @@
 			<?php		
 				include("../conex.inc");
 
-				$sql = "SELECT id_producto, nom_producto, precio, precio_neto, descripcion FROM productos WHERE eliminado=0";
+				$sql = "SELECT id_producto, rut_prov, nom_producto, precio, precio_neto, descripcion FROM productos WHERE eliminado=0";
 				$resultado = mysql_query($sql,$db);
 				echo"	<table id='table-div' cellspacing='0' cellpadding='0' border='0' width='325'>
 							<tr>
-								<th>ID</th>
+								<th>Código Producto</th>
+								<th>Rut Proveedor</th>
 								<th>Nombre Producto</th>
 								<th>Precio</th>
 								<th>Precio Neto</th>
@@ -34,7 +35,8 @@
 								<td>$fila[1]</td>
 								<td>$fila[2]</td>				
 								<td>$fila[3]</td>
-								<td>$fila[4]</td>	
+								<td>$fila[4]</td>
+								<td>$fila[5]</td>	
 							</tr>";
 							
 						}

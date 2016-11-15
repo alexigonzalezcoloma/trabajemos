@@ -13,9 +13,8 @@ if(isset($_REQUEST["id_producto"])){
 	$precio 	  = $_POST["precio"];
 	$lista_compra = $_POST["lista_compra"];
 	$descripcion  = $_POST["descripcion"];
-	$eliminado    = $_POST["eliminado"];
 
-	$query = "UPDATE productos SET nom_producto='$nom_producto', stock='$stock', precio_neto='$precio_neto', precio='$precio', lista_compra='$lista_compra', descripcion='$descripcion', eliminado='$eliminado' WHERE id_producto='$id1'";	
+	$query = "UPDATE productos SET nom_producto='$nom_producto', stock='$stock', precio_neto='$precio_neto', precio='$precio', lista_compra='$lista_compra', descripcion='$descripcion' WHERE id_producto='$id1'";	
 	$resp = mysql_query($query);
 
 	$sql = "SELECT * FROM productos";
@@ -29,7 +28,6 @@ if(isset($_REQUEST["id_producto"])){
 						<th>Precio</th>
 						<th>Lista Compra</th>
 						<th>Descripción</th>
-						<th>Eliminado</th>
 						<th>Acción</th>
 					</tr>";
 	if (mysql_num_rows($resultado)>0){
@@ -41,8 +39,7 @@ if(isset($_REQUEST["id_producto"])){
 						<td>$fila[3]</td>					
 						<td>$fila[4]</td>
 						<td>$fila[5]</td>
-						<td>$fila[6]</td>	
-						<td>$fila[7]</td>				
+						<td>$fila[6]</td>				
 						<td>
 							<img class='action-icon-table edit-producto' id='$fila[0]' src='img/icons/edit.png' title='Editar' width='20px' height='20px'/>
 							<img class='action-icon-table delete-producto' id='$fila[0]' src='img/icons/delete.png' title='Eliminar' width='20px' height='20px'/>
@@ -54,7 +51,7 @@ if(isset($_REQUEST["id_producto"])){
 	else{
 		echo"<td colspan='8'>Sin resultados</td>";
 	}
-	echo"</table>
+	echo"</table><br/>
 			<button id='addproducto' class='button-action'>Agregar Producto</button>";
 }
 ?>

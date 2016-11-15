@@ -86,24 +86,28 @@
 							$resultado = mysql_query($sql,$conexion);
 							echo "	<table id='table-div' cellspacing='0' cellpadding='0' border='0' width='325'>
 										<tr>
-											<th>ID Producto</th>
+											<th>Código Producto</th>
+											<th>Rut Proveedor</th>
 											<th>Nombre Producto</th>
 											<th>Stock</th>
 											<th>Precio Neto</th>
 											<th>Precio</th>
 											<th>Lista Compra</th>
 											<th>Descripcion</th>
+											<th>Eliminado</th>
 										</tr>";
 							if(mysql_num_rows($resultado) > 0){
 								while($fila = mysql_fetch_array($resultado)){
 									echo"<tr>
-											<td>$fila[0]</td>				
-											<td>$fila[1]</td>
+											<td>$fila[0]</td>	
+											<td>$fila[1]</td>			
 											<td>$fila[2]</td>
-											<td>$fila[3]</td>					
+											<td>$fila[3]</td>
 											<td>$fila[4]</td>					
-											<td>$fila[5]</td>
+											<td>$fila[5]</td>					
 											<td>$fila[6]</td>
+											<td>$fila[7]</td>
+											<td>$fila[8]</td>
 										</tr>";
 								}
 							}

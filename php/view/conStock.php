@@ -17,7 +17,7 @@
 				$resultado = mysql_query($sql,$db);
 				echo"	<table id='table-div' cellspacing='0' cellpadding='0' border='0' width='325'>
 							<tr>
-								<th>ID</th>
+								<th>Código Producto</th>
 								<th>Nombre Producto</th>
 								<th>Precio</th>
 								<th>Stock</th>

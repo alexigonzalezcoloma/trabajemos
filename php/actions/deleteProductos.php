@@ -11,18 +11,18 @@ if(isset($_REQUEST["id_producto"])){
 	$result = mysql_query($query);
 
 
-	$sql = "SELECT * FROM productos";
+	$sql = "SELECT * FROM productos WHERE eliminado<>1";
 	$resultado = mysql_query($sql);
 	echo "	<table id='table-div' cellspacing='0' cellpadding='0' border='0' width='325'>
 				<tr>
-					<th>ID Producto</th>
+					<th>Código Producto</th>
+					<th>Rut Proveedor</th>
 					<th>Nombre Producto</th>
 					<th>Stock</th>
 					<th>Precio Neto</th>
 					<th>Precio</th>
 					<th>Lista Compra</th>
 					<th>Descripcion</th>
-					<th>Eliminado</th>
 					<th>Acción</th>
 				</tr>";
 	if (mysql_num_rows($resultado) > 0){
@@ -35,7 +35,7 @@ if(isset($_REQUEST["id_producto"])){
 					<td>$fila[4]</td>					
 					<td>$fila[5]</td>
 					<td>$fila[6]</td>
-					<td>$fila[7]</td>				
+					<td>$fila[7]</td>			
 					<td>
 						<img class='action-icon-table edit-producto' id='$fila[0]' src='img/icons/edit.png' title='Editar' width='20px' height='20px'/>
 						<img class='action-icon-table delete-producto' id='$fila[0]' src='img/icons/delete.png' title='Eliminar' width='20px' height='20px'/>
@@ -47,6 +47,6 @@ if(isset($_REQUEST["id_producto"])){
 		echo"<td colspan='8'>Sin resultados</td>";
 	}
 	echo "</table>
-			<input type='submit' id='addproducto' class='button-action' value='Agregar Producto'>";
+			<button id='addproducto' class='button-action'>Agregar Producto</button>";
 }
 ?>

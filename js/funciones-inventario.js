@@ -9,6 +9,7 @@ $(document).ready(function(){
 				dataType: "html",                 
 				success: function(response){ 
 					$("#content-1-body").html(response);
+					alert("Producto eliminado");
 					//setTimeout(function(){document.getElementById("info").innerHTML="";}, 3000);
 				}
 			})	
@@ -29,18 +30,18 @@ $(document).ready(function(){
 	
 	$('.save-producto').click(function(){
 		var $IDproducto = $('#producto-id').val();
+		var $productoproveedor = $ $('#producto-proveedor').val();
 		var $productonombre = $('#producto-nombre').val();
 		var $productostock = $('#producto-stock').val();
 		var $productoprecioneto = $('#producto-precioneto').val();
 		var $productoprecio = $('#producto-precio').val();
 		var $productolistacompra = $('#producto-listacompra').val();
 		var $productodescripcion = $('#producto-descripcion').val();
-		var $productoeliminado = $('#producto-eliminado').val();
 		
-		if($IDproducto!="" && $productonombre!="" && $productostock!="" && $productoprecioneto!="" && $productoprecio!="" && $productolistacompra!="" && $productodescripcion!="" && $productoeliminado!=""){
+		if($IDproducto!="" && $productoproveedor!="" && $productonombre!="" && $productostock!="" && $productoprecioneto!="" && $productoprecio!="" && $productolistacompra!="" && $productodescripcion!=""){
 			$.ajax({ 
 				type: "POST",
-				data:{id1:$(this).attr('id'),id_producto:$IDproducto,nom_producto:$productonombre,stock:$productostock,precio_neto:$productoprecioneto,precio:$productoprecio,lista_compra:$productolistacompra,descripcion:$productodescripcion,eliminado:$productoeliminado},
+				data:{id1:$(this).attr('id'),id_producto:$IDproducto,rut_prov:$productoproveedor,nom_producto:$productonombre,stock:$productostock,precio_neto:$productoprecioneto,precio:$productoprecio,lista_compra:$productolistacompra,descripcion:$productodescripcion},
 				url: "php/actions/saveProductos.php",             
 				dataType: "html",                 
 				success: function(response){ 

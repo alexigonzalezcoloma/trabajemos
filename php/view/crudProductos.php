@@ -17,18 +17,18 @@
 				<?php		
 					include("../conex.inc");
 		
-					$sql = "SELECT * FROM productos";
+					$sql = "SELECT * FROM productos WHERE eliminado<>1";
 					$resultado = mysql_query($sql,$db);
 					echo "	<table id='table-div' cellspacing='0' cellpadding='0' border='0' width='325'>
 								<tr>
-									<th>ID Producto</th>
+									<th>Código Producto</th>
+									<th>Rut Proveedor</th>
 									<th>Nombre Producto</th>
 									<th>Stock</th>
 									<th>Precio Neto</th>
 									<th>Precio</th>
 									<th>Lista Compra</th>
 									<th>Descripcion</th>
-									<th>Eliminado</th>
 									<th>Acción</th>
 								</tr>";
 						if (mysql_num_rows($resultado) > 0){
