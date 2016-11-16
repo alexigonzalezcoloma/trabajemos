@@ -17,11 +17,11 @@
 				<?php		
 					include("../conex.inc");
 		
-					$sql = "SELECT * FROM productos WHERE eliminado<>1";
-					$resultado = mysql_query($sql,$db);
+					$sql = "SELECT * FROM productos";
+					$resultado = mysqli_query($db,$sql);
 					echo "	<table id='table-div' cellspacing='0' cellpadding='0' border='0' width='325'>
 								<tr>
-									<th>Código Producto</th>
+									<th>ID Producto</th>
 									<th>Rut Proveedor</th>
 									<th>Nombre Producto</th>
 									<th>Stock</th>
@@ -29,10 +29,11 @@
 									<th>Precio</th>
 									<th>Lista Compra</th>
 									<th>Descripcion</th>
+									<th>Eliminado</th>
 									<th>Acción</th>
 								</tr>";
-						if (mysql_num_rows($resultado) > 0){
-							while($fila = mysql_fetch_array($resultado)){
+						if (mysqli_num_rows($resultado) > 0){
+							while($fila = mysqli_fetch_array($resultado)){
 								echo"<tr>
 										<td>$fila[0]</td>
 										<td>$fila[1]</td>				
@@ -41,7 +42,8 @@
 										<td>$fila[4]</td>					
 										<td>$fila[5]</td>
 										<td>$fila[6]</td>
-										<td>$fila[7]</td>				
+										<td>$fila[7]</td>
+										<td>$fila[8]</td>
 										<td>
 											<img class='action-icon-table edit-producto' id='$fila[0]' src='img/icons/edit.png' title='Editar' width='20px' height='20px'/>
 											<img class='action-icon-table delete-producto' id='$fila[0]' src='img/icons/delete.png' title='Eliminar' width='20px' height='20px'/>
