@@ -1,7 +1,7 @@
 ﻿$(document).ready(function){
 	$(#buscar).click(function)({
 	var $busca=$(#"busca").val()
-		if($busca!=""){
+		if($busca!="" & $busca.length>=3){
 			$.ajax({
 			type:"POST",
 				data:{busca:$busca},
