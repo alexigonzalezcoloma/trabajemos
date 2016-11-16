@@ -12,23 +12,23 @@
 		<p class="content-info">
 			<?php		
 				include("../conex.inc");
-
-				$sql = "SELECT id_producto,nom_producto,precio, lista_compra FROM productos WHERE eliminado=0";
-				$resultado = mysql_query($sql,$db);
+				
+				$lista_compra="UPDATE productos SET lista_compra=1 WHERE stock=0";
+				mysqli_query($db,$lista_compra);
+				$sql = "SELECT id_producto,nom_producto,precio FROM productos WHERE eliminado=0 and lista_compra=1";
+				$resultado = mysqli_query($db,$sql);
 				echo"	<table id='table-div' cellspacing='0' cellpadding='0' border='0' width='325'>
 							<tr>
 								<th>Código Producto</th>
 								<th>Nombre Producto</th>
 								<th>Precio</th>
-								<th>Cantidad</th>
 							</tr>";
-					if (mysql_num_rows($resultado)>0){
-						while($fila = mysql_fetch_array($resultado)){
+					if (mysqli_num_rows($resultado)>0){
+						while($fila = mysqli_fetch_array($resultado)){
 							echo"<tr>
 									<td>$fila[0]</td>				
 									<td>$fila[1]</td>
 									<td>$fila[2]</td>				
-									<td>$fila[3]</td>
 								</tr>";
 						}
 					}
