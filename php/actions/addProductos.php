@@ -2,7 +2,7 @@
 <script type="text/javascript" src="js/functions-js.js"></script>
 <script type="text/javascript" src="js/funciones-inventario.js"></script>
 <?php
-	$conectar=mysqli_connect("localhost","root","","valeria");
+	$conectar=mysqli_connect("w3.inf.uct.cl","valeria","vale4321","valeria");
 	$consulta=mysqli_query($conectar,"SELECT rut_prov FROM proveedores");
 	echo"	<table id='table-div' cellspacing='0' cellpadding='0' border='0' width='325'>
 				<tr>
