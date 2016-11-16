@@ -52,16 +52,15 @@ $(document).ready(function(){
 	});
 
 	$('#add-new-producto').click(function(){
+		var $productoprov=$('#proveedor-rut').val();
 		var $productonombre = $('#producto-nombre').val();
-		var $productostock = $('#producto-stock').val();
 		var $productoprecioneto = $('#producto-precioneto').val();
 		var $productoprecio = $('#producto-precio').val();
-		var $productodescripcion = $('#producto-descripcion').val();
-		
-		if($productonombre!="" && $productostock!="" && $productoprecioneto!="" && $productoprecio!="" && $productodescripcion!=""){
+		var $productodescripcion = $('#producto-descripcion').val();		
+		if($productoprov!="" && $productonombre!="" && $productoprecioneto!="" && $productoprecio!="" && $productodescripcion!=""){
 			$.ajax({ 
 				type: "POST",
-				data:{nom_producto:$productonombre,stock:$productostock,precio_neto:$productoprecioneto,precio:$productoprecio,descripcion:$productodescripcion},
+				data:{nom_producto:$productonombre,rut_prov:$productoprov,precio_neto:$productoprecioneto,precio:$productoprecio,descripcion:$productodescripcion},
 				url: "php/actions/newProductos.php",             
 				dataType: "html",                 
 				success: function(response){ 
