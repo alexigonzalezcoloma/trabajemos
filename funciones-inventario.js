@@ -62,19 +62,37 @@ $(document).ready(function(){
 		var $productodescripcion = $('#producto-descripcion').val();
 		
 		if(($productonombre!="" && $productoprov!="" && $productoprecioneto!="" && $productoprecio!="" && $productodescripcion!="") || ($productonombre!="" && $productoprov!="" && $productoprecioneto!="" && $productoprecio!="" && $productodescripcion=="")){
-			var respuesta = confirm("¿Está seguro de agregar este producto?");
-			if(respuesta){
-				$.ajax({ 
-					type: "POST",
-					data:{nom_producto:$productonombre,rut_prov:$productoprov,precio_neto:$productoprecioneto,precio:$productoprecio,descripcion:$productodescripcion},
-					url: "php/actions/newProductos.php",             
-					dataType: "html",                 
-					success: function(response){ 
-						$("#content-1-body").html(response);
+			if($productonombre.length>0 && $productonombre.length<31) {
+				if($productoprecioneto.length>0 && $productoprecioneto.length<12) {
+					if($productoprecio.length>0 && $productoprecio.length<12) {
+						var respuesta = confirm("¿Está seguro de agregar este producto?");
+						if(respuesta){
+							$.ajax({ 
+								type: "POST",
+								data:{nom_producto:$productonombre,rut_prov:$productoprov,precio_neto:$productoprecioneto,precio:$productoprecio,descripcion:$productodescripcion},
+								url: "php/actions/newProductos.php",             
+								dataType: "html",                 
+								success: function(response){ 
+									$("#content-1-body").html(response);
+								}
+							})
+						}
 					}
-				})
+					else {
+						alert("El precio del producto no es admitido");
+					}
+				}
+				else {
+					alert("El precio neto del producto no es admitido");
+				}
 			}
-		}		
+			else {
+				alert("El nombre del producto no es admitido");
+			}
+		}
+		else {
+			alert("Completa los datos");
+		}
 	});
 
 	$('#add-producto').click(function(){
