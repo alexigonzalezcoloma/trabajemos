@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	$('.delete-producto').click(function(){
-		var respuesta = confirm("¿Está seguro que desea borrar?");
+		var respuesta = confirm("¿Está seguro que desea eliminar?");
 		if(respuesta){
 			$.ajax({ 
 				type: "POST",
@@ -38,51 +38,72 @@ $(document).ready(function(){
 		var $productolistacompra = $('#producto-listacompra').val();
 		var $productodescripcion = $('#producto-descripcion').val();
 		
-		if($IDproducto!="" && $productoproveedor!="" && $productonombre!="" && $productostock!="" && $productoprecioneto!="" && $productoprecio!="" && $productolistacompra!="" && $productodescripcion!=""){
-			$.ajax({ 
-				type: "POST",
-				data:{id1:$(this).attr('id'),id_producto:$IDproducto,rut_prov:$productoproveedor,nom_producto:$productonombre,stock:$productostock,precio_neto:$productoprecioneto,precio:$productoprecio,lista_compra:$productolistacompra,descripcion:$productodescripcion},
-				url: "php/actions/saveProductos.php",             
-				dataType: "html",                 
-				success: function(response){ 
-					$("#content-1-body").html(response);
-				}
-			})
+		if(($IDproducto!="" && $productoproveedor!="" && $productonombre!="" && $productostock!="" && $productoprecioneto!="" && $productoprecio!="" && $productolistacompra!="" && $productodescripcion!="") || ($IDproducto!="" && $productoproveedor!="" && $productonombre!="" && $productostock!="" && $productoprecioneto!="" && $productoprecio!="" && $productolistacompra!="" && $productodescripcion=="")){
+			var respuesta = confirm("¿Confirma los cambios para este producto?");
+			if(respuesta){
+				$.ajax({ 
+					type: "POST",
+					data:{id1:$(this).attr('id'),id_producto:$IDproducto,rut_prov:$productoproveedor,nom_producto:$productonombre,stock:$productostock,precio_neto:$productoprecioneto,precio:$productoprecio,lista_compra:$productolistacompra,descripcion:$productodescripcion},
+					url: "php/actions/saveProductos.php",             
+					dataType: "html",                 
+					success: function(response){ 
+						$("#content-1-body").html(response);
+					}
+				})
+			}
 		}		
 	});
 
 	$('#add-new-producto').click(function(){
 		var $productonombre = $('#producto-nombre').val();
-		var $productostock = $('#producto-stock').val();
+		var $productoprov = $('#proveedor-rut').val();
 		var $productoprecioneto = $('#producto-precioneto').val();
 		var $productoprecio = $('#producto-precio').val();
 		var $productodescripcion = $('#producto-descripcion').val();
 		
-		if($productonombre!="" && $productostock!="" && $productoprecioneto!="" && $productoprecio!="" && $productodescripcion!=""){
-			$.ajax({ 
-				type: "POST",
-				data:{nom_producto:$productonombre,stock:$productostock,precio_neto:$productoprecioneto,precio:$productoprecio,descripcion:$productodescripcion},
-				url: "php/actions/newProductos.php",             
-				dataType: "html",                 
-				success: function(response){ 
-					$("#content-1-body").html(response);
-				}
-			})
+		if(($productonombre!="" && $productoprov!="" && $productoprecioneto!="" && $productoprecio!="" && $productodescripcion!="") || ($productonombre!="" && $productoprov!="" && $productoprecioneto!="" && $productoprecio!="" && $productodescripcion=="")){
+			var respuesta = confirm("¿Está seguro de agregar este producto?");
+			if(respuesta){
+				$.ajax({ 
+					type: "POST",
+					data:{nom_producto:$productonombre,rut_prov:$productoprov,precio_neto:$productoprecioneto,precio:$productoprecio,descripcion:$productodescripcion},
+					url: "php/actions/newProductos.php",             
+					dataType: "html",                 
+					success: function(response){ 
+						$("#content-1-body").html(response);
+					}
+				})
+			}
 		}		
 	});
 
 	$('#add-producto').click(function(){
-		
+		$.ajax({ 
+			type: "POST",
+			url: "php/actions/addProductos.php",             
+			dataType: "html",                 
+			success: function(response){ 
+				$("#content-1-body").html(response);
+			}
+		})		
+	});
+	
+	$('#busca').click(function(){
+		var $idproducto = $('#producto-codigo').val();
+		if($idproducto!="" && $idproducto>0){
 			$.ajax({ 
 				type: "POST",
-				url: "php/actions/addProductos.php",             
+				data:{buscar_producto:$idproducto},
+				url: "php/actions/buscarProducto.php",             
 				dataType: "html",                 
 				success: function(response){ 
 					$("#content-1-body").html(response);
 				}
 			})		
+		}
+		else {
+			alert("Sólo se permite el ingreso de números distinto de 0");
+		}
 	});
 });
-
-
 
